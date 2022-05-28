@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ColorSpotter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #e3e3e3;
+      }
+
+      .header {
+        width: min(500px, 90%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      button {
+        border: none;
+        border-radius: 3px;
+        padding: 10px 15px;
+        background-color: #ffa07a;
+        color: #434343;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 1px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      button:active {
+        transform: scale(0.9);
+      }
+
+      .score {
+        font-weight: 500;
+      }
+
+      .grid-wrapper {
+        display: grid;
+        width: 500px;
+        height: 500px;
+        border-radius: 3px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      .grid-block {
+        border: 1px solid rgba(128, 128, 128, 0.479);
+        background-color: #a9a9a9;
+      }
+
+      .gameOverText {
+        visibility: hidden;
+        letter-spacing: 2px;
+        color: rgb(107, 104, 104);
+        font-weight: 500;
+      }
+
+      @media all and (max-width: 600px) {
+        .grid-wrapper {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body onload="renderGridBlocks()">
+    <main class="container">
+      <header class="header">
+        <button class="startBtn">Start</button>
+        <p class="gameOverText">GameOver!</p>
+        <p>Score : <span class="score">0</span></p>
+      </header>
+      <section class="grid-wrapper"></section>
+    </main>
+    <script src="./index.js" defer></script>
+  </body>
+</html>
